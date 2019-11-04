@@ -8,16 +8,18 @@
     $filesize = filesize($filename);
     $username = fread($fp,$filesize);
 
-    $sql = "select balance from accounts";
+    $sql = "select balance from accounts where username='$username'";
     $balance = $conn->query($sql);
 
     if($withdraw > $balance){
         echo "Sorry withdraw account exceeds the avaible Balance";
     }else{
-        $newbalance = $balance - $withdraw;
-        $sql2 = "update account set balance='$newbalance' where username = '$username'";
+        $newbalance = $balance->fetch_object()->balance - $withdraw;
+        $sql2 = "update accounts set balance='$newbalance' where username='$username'";
+        $conn->query($sql2);
     }
-    $sql3 = "insert into transaction(username,withdraw) values ('$username','$withdraw')";
+    $date = date("yyyy-mm-dd");
+    $sql3 = "insert into transaction(username,withdraw,date) values ('$username','$withdraw',$date)";
     $conn->query($sql3);
 
 ?>
