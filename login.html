@@ -1,16 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign in</title>
+      <style>
+      body{
+
+            background-image:  url(ww.jpg);
+
+            background-repeat: no-repeat;
+                background-position: cover;
+                background-size:cover;
+
+
+      }  
+
+.loginbox{
+    width: 320px;
+    height: 420px;
+    background:aqua;
+    color: #fff;
+    margin: 200px 600px;
+    position: absolute;
+    
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+
+
+
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.loginbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background:green;
+    color: black;
+    font-size: 18px;
+    border-radius: 20px;
+}
+     
+        </style>
+
+    
 </head>
 <body>
     <form action="login_code.php" method="post">
-        <label for="">UserName</label> <input type="text" name="username" id="">
-        <label for="">password</label> <input type="text" name="password" id="">
-        <input type="submit" value="Sign In">
+
+        <div class="loginbox">
+        username 
+        <input type="text" name="username" placeholder="username"><br>
+        passsword 
+        <input type="password" name="password" placeholder="password"><br>
+       <p>forgetpassword</p> 
+        <input type="submit" value="login" class="login">
+
+         </div>
+
+
     </form>
+    
 </body>
 </html>
